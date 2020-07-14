@@ -26,28 +26,20 @@ class LinkedList:
 
     def add_to_tail(self, data):
         new_node = Node(data)
+        self.tail = new_node
         if self.tail is not None:
             self.tail.set_next(new_node)
-            self.tail = new_node
-        elif self.head is not None:
-            self.tail = new_node
-            self.tail.set_next(None)
         else:
-            self.head = new_node
             self.head.set_next(None)
-            self.tail = new_node
+            self.head = new_node
             self.tail.set_next(None)
 
     def add_to_head(self, data):
         new_node = Node(data)
+        self.head = new_node
         if self.head is not None:
             self.head.set_next(new_node)
-            self.head = new_node
-        elif self.tail is not None:
-            self.head = new_node
-            self.head.set_next(None)
         else:
-            self.head = new_node
             self.head.set_next(None)
             self.tail = new_node
             self.tail.set_next(None)

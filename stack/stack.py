@@ -41,12 +41,12 @@ class Stack:
 
     def pop(self):
         if self.isEmpty():
-            return
+            return None
         else:
             return int(self.storage.pop())
 
     def peek(self):
         if self.isEmpty():
-            return
+            return None
         else:
             return self.storage[len(self.storage)-1]

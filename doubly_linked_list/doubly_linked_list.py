@@ -52,6 +52,9 @@ class DoublyLinkedList:
             p = p.get_next()
         return s
 
+    def isEmpty(self):
+        return self.tail == None and self.head == None
+
     """
     Wraps the given value in a ListNode and inserts it
     as the new head of the list. Don't forget to handle
@@ -154,7 +157,9 @@ class DoublyLinkedList:
     """
 
     def delete(self, node):
-        if node == self.head:
+        if self.isEmpty():
+            return
+        elif node == self.head:
             self.remove_from_head()
         elif node == self.tail:
             self.remove_from_tail()
